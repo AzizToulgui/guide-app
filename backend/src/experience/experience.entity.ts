@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {Column, Entity,  PrimaryGeneratedColumn} from 'typeorm';
 
 @Entity()
 export class Experience {
@@ -31,4 +31,5 @@ export class Experience {
 
     @Column('text', { array: true, nullable: true })
     targetedGroups: string[];
+
 }

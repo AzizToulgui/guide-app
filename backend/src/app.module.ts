@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { ExperienceModule } from './experience/experience.module';
 import {TypeOrmModule} from "@nestjs/typeorm";
 import { Experience } from './experience/experience.entity';
+import { AuthModule } from './auth/auth.module';
+import {User} from "./user/user.entity";
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -13,9 +15,9 @@ import { Experience } from './experience/experience.entity';
     username: 'postgres',
     password: 'root',
     database: 'experience_db',
-    entities: [Experience],
+    entities: [User, Experience],
     synchronize: true,
-  }),ExperienceModule],
+  }),ExperienceModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
